@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wanderlust Adventures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animation-delay-0 {
+                animation-delay: 0s;
+            }
+            .animation-delay-4000 {
+                animation-delay: 4s;
+            }
+            .animation-delay-8000 {
+                animation-delay: 8s;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ["Inter", "serif"],
+                    },
+                    boxShadow: {
+                        searchShadow: '0 0 10px rgba(76, 201, 240, 0.3)',
+                    },
+                    animation: {
+                        'slide': 'slide 12s linear infinite',
+                    },
+                    keyframes: {
+                        slide: {
+                            '0%, 20%': {
+                                opacity: '1',
+                            },
+                            '25%, 80%': {
+                                opacity: '0',
+                            },
+                            '85%, 100%': {
+                                opacity: '1',
+                            }
+                        },
+                    }
+                },
+
+            }
+        }
+    </script>
+</head>
+<!-- body -->
+<body class=" bg-fixed bg-cover bg-center min-h-screen w-full p-[20px] bg-[#000814] bg-no-repeat text-[#f1faee] font-inter" style="background-image: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600')">
+
+    <!-- Container -->
+    <div class="container mx-auto bg-opacity-30 backdrop-blur-md rounded-lg shadow-lg flex flex-col md:flex-row overflow-hidden max-w-[1200px]">
+        <!-- Sidebar -->
+        <div class="sidebar bg-[#3A0CA333] bg-opacity-20 backdrop-blur-lg p-6 w-full md:w-64">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" class="flex items-center space-x-2 text-lg text-white hover:text-blue-400">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 text-lg text-[#f1faee] hover:translate-x-[5px] hover:bg-[#FFFFFF1A] rounded-xl p-[10px] transition-all ease duration-300">
+                        <i class="fas fa-plane"></i>
+                        <span>Destinations</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 text-lg text-[#f1faee] hover:translate-x-[5px] hover:bg-[#FFFFFF1A] rounded-xl p-[10px] transition-all ease duration-300">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Packages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 text-lg text-[#f1faee] hover:translate-x-[5px] hover:bg-[#FFFFFF1A] rounded-xl p-[10px] transition-all ease duration-300">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 text-lg text-[#f1faee] hover:translate-x-[5px] hover:bg-[#FFFFFF1A] rounded-xl p-[10px] transition-all ease duration-300">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content flex-1 p-6">
+            <!-- Navbar -->
+            <nav class="flex justify-between items-center mb-6">
+                <div class="logo text-2xl font-bold text-cyan-300">Wanderlust Adventures</div>
+                <div class="search-container relative">
+                    <input type="text" class="search-bar px-4 py-2 rounded-full bg-[#FFFFFF1A] text-[#f1faee] backdrop-blur-md focus:outline-none w-48 transition-all duration-300 focus:w-64 focus:shadow-searchShadow placeholder:text-[14px] placeholder:text-[#f1faee33]"
+                    placeholder="Search Destination"/>
+                    <i class="fas fa-search absolute right-4 top-2/4 transform -translate-y-2/4 text-cyan-300"></i>
+                </div>
+            </nav>
+
+            <!-- Slideshow -->
+            <div class="slideshow h-72 relative mb-6 rounded-lg overflow-hidden">
+                <img class="absolute block w-full h-full object-cover  inset-0 animate-slide animation-delay-0 " src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 1" />
+                <img class="absolute block w-full h-full object-cover inset-0 animate-slide animation-delay-4000 " src="https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 2" />
+                <img class="absolute block w-full h-full object-cover inset-0 animate-slide animation-delay-8000" src="https://images.pexels.com/photos/2087391/pexels-photo-2087391.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 3" />
+            </div>
+
+            <!-- Agency Name  -->
+            <div class="agency-name bg-[#4361ee] text-[#f1faee] bg-opacity-30 backdrop-blur-[5px] text-center p-2 mb-6 rounded-lg">
+                <h2 class="text-2xl font-bold">Wanderlust Adventures</h2>
+                <p class="text-base">Explore the world with us!</p>
+            </div>
+
+            <!-- Main Card -->
+            <div class="main-card bg-[#FFFFFF] bg-opacity-10 backdrop-blur-[5px] p-6 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold ">Welcome to Wanderlust Adventures</h2>
+                <p>
+                    Embark on a journey of a lifetime with Wanderlust Adventures. We specialize in creating unforgettable
+                    travel experiences tailored to your desires.
+                </p>
+                <br>
+                <br>
+                <p>
+                    Our expert team of travel enthusiasts is dedicated to curating the perfect itinerary for you. Whether
+                    you're seeking a relaxing beach getaway, an adventurous mountain expedition, or a cultural city tour,
+                    we have the perfect package for you.
+                </p>
+                <p>
+                    With Wanderlust Adventures, you'll discover hidden gems, immerse yourself in local cultures, and
+                    create memories that will last a lifetime.
+                </p>
+            </div>
+
+            <!-- Side Cards -->
+            <div class="flex flex-col gap-[20px]">
+                <div class="side-card bg-[#FFFFFF] bg-opacity-10 backdrop-blur-[5px] p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Special Offers</h3>
+                    <p>Check out our latest deals and discounts on popular destinations!</p>
+                </div>
+                <div class="side-card bg-[#FFFFFF] bg-opacity-10 backdrop-blur-[5px] p-4 rounded-lg">
+                    <h3 class="text-xl font-bold">Travel Tips</h3>
+                    <p>Get expert advice on packing, local customs, and must-visit attractions.</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="text-center p-4 cursor-pointer">
+                <p>Click here to contact us</p>
+            </footer>
+        </main>
+    </div>
+
+</body>
+
+</html>
